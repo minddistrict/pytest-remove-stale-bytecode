@@ -24,3 +24,10 @@ def test_plugin_removes_pyc_files(testdir, ext):
     assert not bar.exists()
     assert fooco.exists()
     assert foo.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_ignores_PYTEST_pyc_files(testdir, ext):
+    foo = testdir.makefile(ext, foo_PYTEST='')
+    testdir.runpytest("-v")
+    assert foo.exists()
