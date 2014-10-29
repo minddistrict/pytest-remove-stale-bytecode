@@ -1,0 +1,6 @@
+include CHANGES.txt
+include README.rst
+include setup.py
+include test_plugin.py
+include tox.ini
+include LICENSE.txt
