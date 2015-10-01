@@ -3,7 +3,7 @@ CHANGES
 =======
 
 
-2.1 (unreleased)
+2.1 (2015-10-01)
 ================
 
 - Also remove bytecode files under Python 3, that end with ``-PYTEST``.
