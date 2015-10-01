@@ -15,7 +15,7 @@ def project_path(*names):
 
 setup(
     name='pytest-remove-stale-bytecode',
-    version='2.0',
+    version='2.1.dev0',
 
     install_requires=[
         'pytest',
