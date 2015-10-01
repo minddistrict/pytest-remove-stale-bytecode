@@ -50,3 +50,17 @@ def test_plugin_removes_python3_bytecode_files(testdir, ext):
     assert foo.exists()
     assert fooco.exists()
     assert not barco.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_removes_python3_PYTEST_bytecode_files(testdir, ext):
+    foo = testdir.makefile('py', foo='')
+    pycache = testdir.mkdir('__pycache__')
+    fooco_name = 'foo.cpython-{}-PYTEST.{}'.format(python_version, ext)
+    fooco = pycache.ensure(fooco_name)
+    barco_name = 'bar.cpython-{}-PYTEST.{}'.format(python_version, ext)
+    barco = pycache.ensure(barco_name)
+    testdir.runpytest("-v")
+    assert foo.exists()
+    assert fooco.exists()
+    assert not barco.exists()

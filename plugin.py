@@ -13,6 +13,7 @@ compiled_suffixes = '.pyc', '.pyo'
 def py_path(path):
     path = str(path)[:-1]
     path = path.replace('_PYTEST.py', '.py')
+    path = path.replace('-PYTEST.py', '.py')
     path = path.replace('{0}__pycache__{0}'.format(os.path.sep), os.path.sep)
     path = path.replace('.cpython-{}.py'.format(python_version), '.py')
     return path
