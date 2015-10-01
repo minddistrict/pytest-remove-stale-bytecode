@@ -1,4 +1,5 @@
 import pytest
+from plugin import python_version
 
 pytest_plugins = "pytester",
 
@@ -27,7 +28,25 @@ def test_plugin_removes_bytecode_files(testdir, ext):
 
 
 @pytest.mark.parametrize("ext", ['pyc', 'pyo'])
-def test_plugin_ignores_PYTEST_bytecode_files(testdir, ext):
-    foo = testdir.makefile(ext, foo_PYTEST='')
+def test_plugin_removes_PYTEST_bytecode_files(testdir, ext):
+    foo = testdir.makefile('py', foo='')
+    foopytest = testdir.makefile(ext, foo_PYTEST='')
+    bar = testdir.makefile(ext, bar_PYTEST='')
     testdir.runpytest("-v")
     assert foo.exists()
+    assert foopytest.exists()
+    assert not bar.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_removes_python3_bytecode_files(testdir, ext):
+    foo = testdir.makefile('py', foo='')
+    pycache = testdir.mkdir('__pycache__')
+    fooco_name = 'foo.cpython-{}.{}'.format(python_version, ext)
+    fooco = pycache.ensure(fooco_name)
+    barco_name = 'bar.cpython-{}.{}'.format(python_version, ext)
+    barco = pycache.ensure(barco_name)
+    testdir.runpytest("-v")
+    assert foo.exists()
+    assert fooco.exists()
+    assert not barco.exists()
