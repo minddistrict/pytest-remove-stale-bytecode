@@ -1,0 +1,9 @@
+[run]
+branch = True
+source = plugin
+
+[report]
+precision = 2
+
+[html]
+directory = coverage-report
