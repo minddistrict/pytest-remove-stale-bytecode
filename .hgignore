@@ -1,4 +1,6 @@
 syntax: glob
 
-.tox
+*.egg-info/
 .cache
+.tox
+__pycache__/
