@@ -18,7 +18,7 @@ CHANGES
 2.0 (2015-10-01)
 ================
 
-- Added support for removing byte code files under Python 3.
+- Add support for removing byte code files under Python 3.
 
 
 1.0 (2014-10-29)
