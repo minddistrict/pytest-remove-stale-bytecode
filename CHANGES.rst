@@ -8,6 +8,9 @@ CHANGES
 
 - Add support for Python 3.6, PyPy2 and PyPy3.
 
+- Do not show output by default anymore. It can be turned on with ``-v``
+  option.
+
 
 2.1 (2015-10-01)
 ================

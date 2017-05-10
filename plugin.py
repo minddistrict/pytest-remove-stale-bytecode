@@ -24,5 +24,6 @@ def pytest_collect_file(path, parent):
         return
     if os.path.exists(py_path(path)):
         return
-    print("\nRemoving stale bytecode file %s" % path)
+    if parent.config.getoption('verbose') > 0:
+        print("\nRemoving stale bytecode file %s" % path)
     path.remove()
