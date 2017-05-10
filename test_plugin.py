@@ -17,6 +17,24 @@ def test_plugin_removes_bytecode_files(testdir, ext):
 
     assert len(testdir.tmpdir.listdir()) == 3
 
+    result = testdir.runpytest()
+
+    assert not any(
+        line.startswith("Removing stale bytecode file")
+        for line in result.outlines)
+    assert not bar.exists()
+    assert fooco.exists()
+    assert foo.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_removes_bytecode_files_verbosely(testdir, ext):
+    foo = testdir.makefile('py', foo='')
+    fooco = testdir.makefile(ext, foo='')
+    bar = testdir.makefile(ext, bar='')
+
+    assert len(testdir.tmpdir.listdir()) == 3
+
     result = testdir.runpytest("-v")
 
     result.stdout.fnmatch_lines([
