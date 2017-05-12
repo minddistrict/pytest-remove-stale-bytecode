@@ -1,6 +1,10 @@
+include .coveragerc
 include CHANGES.rst
+include LICENSE.txt
 include README.rst
 include setup.py
 include test_plugin.py
 include tox.ini
-include LICENSE.txt
+
+include bitbucket-pipelines.yml
+exclude bitbucket-pipelines.yml
