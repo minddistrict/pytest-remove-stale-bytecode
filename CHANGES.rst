@@ -11,6 +11,8 @@ CHANGES
 - Do not show output by default anymore. It can be turned on with ``-v``
   option.
 
+- Change the license from ZPL to MIT.
+
 
 2.1 (2015-10-01)
 ================

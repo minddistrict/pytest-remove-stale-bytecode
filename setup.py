@@ -33,7 +33,7 @@ setup(
 
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
-    license='ZPL 2.1',
+    license='MIT',
     url='https://bitbucket.org/gocept/pytest-remove-stale-bytecode/',
 
     keywords='',
@@ -41,8 +41,7 @@ setup(
 Development Status :: 4 - Beta
 Environment :: Console
 Intended Audience :: Developers
-License :: OSI Approved
-License :: OSI Approved :: Zope Public License
+License :: OSI Approved :: MIT License
 Natural Language :: English
 Operating System :: OS Independent
 Programming Language :: Python
