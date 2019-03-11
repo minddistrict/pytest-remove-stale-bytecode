@@ -3,8 +3,12 @@ CHANGES
 =======
 
 
-4.0 (unreleased)
-================
+3.0.1 (unreleased)
+==================
+
+- This plug-in only works in py.test < version 3.10.
+  It is broken since the merge of
+  `pytest-dev/pytest#4250 <https://github.com/pytest-dev/pytest/pull/4250>`_
 
 - Drop support for Python 3.3.
 
