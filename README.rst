@@ -8,6 +8,11 @@ sure that Python modules – whose source was deleted – are not accidentally v
 to the test runner anymore due to a left-over bytecode file (``*.pyc``,
 ``*.pyo``).
 
+CAUTION
+=======
+
+This plug-in no longer works since py.test 3.10. See change log for details.
+
 Usage
 =====
 

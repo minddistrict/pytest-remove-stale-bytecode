@@ -15,10 +15,10 @@ def project_path(*names):
 
 setup(
     name='pytest-remove-stale-bytecode',
-    version='4.0.dev0',
+    version='3.0.1.dev0',
 
     install_requires=[
-        'pytest',
+        'pytest < 3.10',
         'setuptools',
     ],
 
@@ -38,7 +38,7 @@ setup(
 
     keywords='',
     classifiers="""\
-Development Status :: 4 - Beta
+Development Status :: 7 - Inactive
 Environment :: Console
 Intended Audience :: Developers
 License :: OSI Approved :: MIT License
