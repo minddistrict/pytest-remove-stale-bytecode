@@ -3,7 +3,7 @@ CHANGES
 =======
 
 
-3.0.1 (unreleased)
+3.0.1 (2019-03-21)
 ==================
 
 - This plug-in only works in py.test < version 3.10.
