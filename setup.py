@@ -1,4 +1,4 @@
-# Copyright (c) 2014-2017 gocept gmbh & co. kg
+# Copyright (c) 2014-2019 gocept gmbh & co. kg
 # See also LICENSE.txt
 
 # This should be only one line. If it must be multi-line, indent the second

@@ -2,16 +2,22 @@
 py.test plugin to remove stale bytecode
 =======================================
 
+CAUTION
+=======
+
+This plug-in no longer works since py.test 3.10. See change log for details.
+
+The discussion at `pytest#4969`_ might also be interesting.
+
+.. _`pytest#4969`: https://github.com/pytest-dev/pytest/issues/4969
+
+Description
+===========
 
 This plugin removes all stale bytecode files before running tests. This makes
 sure that Python modules -- whose source was deleted -- are not accidentally visible
 to the test runner anymore due to a left-over bytecode file (``*.pyc``,
 ``*.pyo``).
-
-CAUTION
-=======
-
-This plug-in no longer works since py.test 3.10. See change log for details.
 
 Usage
 =====
