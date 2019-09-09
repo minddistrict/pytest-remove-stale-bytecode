@@ -1,4 +1,5 @@
 import pkg_resources
+import os
 import os.path
 import sys
 
@@ -19,11 +20,15 @@ def py_path(path):
     return path
 
 
-def pytest_collect_file(path, parent):
-    if path.ext not in compiled_suffixes:
-        return
-    if os.path.exists(py_path(path)):
-        return
-    if parent.config.getoption('verbose') > 0:
-        print("\nRemoving stale bytecode file %s" % path)
-    path.remove()
+def pytest_configure(config):
+    for testpath in config.args:
+        for root, subdirs, files in os.walk(testpath):
+            for filename in files:
+                path = os.path.join(root, filename)
+                if os.path.splitext(path)[1] not in compiled_suffixes:
+                    continue
+                if os.path.exists(py_path(path)):
+                    continue
+                if config.getoption('verbose') > 0:
+                    print("\nRemoving stale bytecode file %s" % path)
+                os.unlink(path)

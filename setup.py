@@ -18,7 +18,7 @@ setup(
     version='3.1.dev0',
 
     install_requires=[
-        'pytest < 3.10',
+        'pytest',
         'setuptools',
     ],
 
@@ -38,7 +38,7 @@ setup(
 
     keywords='',
     classifiers="""\
-Development Status :: 7 - Inactive
+Development Status :: 4 - Beta
 Environment :: Console
 Intended Audience :: Developers
 License :: OSI Approved :: MIT License
