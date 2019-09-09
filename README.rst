@@ -2,15 +2,6 @@
 py.test plugin to remove stale bytecode
 =======================================
 
-CAUTION
-=======
-
-This plug-in no longer works since py.test 3.10. See change log for details.
-
-The discussion at `pytest#4969`_ might also be interesting.
-
-.. _`pytest#4969`: https://github.com/pytest-dev/pytest/issues/4969
-
 Description
 ===========
 

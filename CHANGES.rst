@@ -6,7 +6,7 @@ CHANGES
 3.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Make work with py.test >=3.10 again
 
 
 3.0.1 (2019-03-21)
