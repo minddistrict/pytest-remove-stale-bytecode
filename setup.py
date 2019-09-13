@@ -61,5 +61,6 @@ Topic :: Software Development :: Testing
         'CHANGES.rst',
     )),
 
+    zip_safe=False,
     py_modules=['plugin'],
 )
