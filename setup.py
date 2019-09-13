@@ -36,7 +36,7 @@ setup(
     license='MIT',
     url='https://bitbucket.org/gocept/pytest-remove-stale-bytecode/',
 
-    keywords='',
+    keywords='pytest pyc bytecode artefacts',
     classifiers="""\
 Development Status :: 4 - Beta
 Environment :: Console
