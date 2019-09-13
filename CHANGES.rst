@@ -3,10 +3,20 @@ CHANGES
 =======
 
 
-3.1 (unreleased)
+4.0 (unreleased)
 ================
 
-- Make work with py.test >=3.10 again
+Backwards incompatible changes
+------------------------------
+
+- Drop support for Python 3.4.
+
+Features
+--------
+
+- Make work with py.test >=3.10 again.
+
+- Add support for Python 3.7.
 
 
 3.0.1 (2019-03-21)
@@ -45,4 +55,4 @@ CHANGES
 1.0 (2014-10-29)
 ================
 
-* initial release
+- initial release
