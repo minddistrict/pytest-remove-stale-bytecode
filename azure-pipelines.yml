@@ -8,24 +8,18 @@ jobs:
     vmImage: "vs2017-win2016"
   strategy:
     matrix:
-      pypy3:
-        python.version: 'pypy3'
-        tox.env: 'pypy3'
-      pypy:
-        python.version: 'pypy'
-        tox.env: 'pypy'
       py27:
         python.version: '2.7'
-        tox.env: 'py27'
+        tox.env: 'py27-azure'
       py35:
         python.version: '3.5'
-        tox.env: 'py35'
+        tox.env: 'py35-azure'
       py36:
         python.version: '3.6'
-        tox.env: 'py36'
+        tox.env: 'py36-azure'
       py37:
         python.version: '3.7'
-        tox.env: 'py37'
+        tox.env: 'py37-azure'
     maxParallel: 10
 
   steps:
