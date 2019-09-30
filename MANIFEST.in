@@ -6,5 +6,5 @@ include setup.py
 include test_plugin.py
 include tox.ini
 
-include bitbucket-pipelines.yml
-exclude bitbucket-pipelines.yml
+include travis.yml
+exclude travis.yml

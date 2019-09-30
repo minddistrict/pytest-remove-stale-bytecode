@@ -1,7 +1,0 @@
-image: saaj/snake-tank
-
-pipelines:
-  default:
-    - step:
-        script:
-          - tox

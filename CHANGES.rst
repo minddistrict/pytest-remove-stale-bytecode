@@ -6,7 +6,7 @@ CHANGES
 4.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Migrate to Github.
 
 
 4.0 (2019-09-13)

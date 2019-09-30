@@ -34,7 +34,7 @@ setup(
     author='gocept <mail@gocept.com>',
     author_email='mail@gocept.com',
     license='MIT',
-    url='https://bitbucket.org/gocept/pytest-remove-stale-bytecode/',
+    url='https://github.com/gocept/pytest-remove-stale-bytecode/',
 
     keywords='pytest pyc bytecode artefacts',
     classifiers="""\
