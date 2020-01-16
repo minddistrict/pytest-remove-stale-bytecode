@@ -8,6 +8,9 @@ CHANGES
 
 - Migrate to Github.
 
+- Fix problems when running tests jobs in parallel.
+  (`#2 <https://github.com/gocept/pytest-remove-stale-bytecode/issues/2>`_)
+
 
 4.0 (2019-09-13)
 ================
