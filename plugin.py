@@ -31,4 +31,7 @@ def pytest_configure(config):
                     continue
                 if config.getoption('verbose') > 0:
                     print("\nRemoving stale bytecode file %s" % path)
-                os.unlink(path)
+                try:
+                    os.unlink(path)
+                except OSError:
+                    pass
