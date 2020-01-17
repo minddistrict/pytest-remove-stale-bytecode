@@ -3,10 +3,21 @@ CHANGES
 =======
 
 
-4.1 (unreleased)
+5.0 (unreleased)
 ================
 
+Backwards incompatible changes
+------------------------------
+
+- Drop support for Python 2.7 and PyPy2.
+
+Features
+--------
+
 - Migrate to Github.
+
+Bug fixes
+---------
 
 - Fix problems when running tests jobs in parallel.
   (`#2 <https://github.com/gocept/pytest-remove-stale-bytecode/issues/2>`_)
