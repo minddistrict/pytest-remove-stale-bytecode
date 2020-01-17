@@ -20,6 +20,10 @@ def py_path(path):
     return path
 
 
+def delete_file(path):
+    os.unlink(path)
+
+
 def pytest_configure(config):
     for testpath in config.args:
         for root, subdirs, files in os.walk(testpath):
@@ -32,6 +36,6 @@ def pytest_configure(config):
                 if config.getoption('verbose') > 0:
                     print("\nRemoving stale bytecode file %s" % path)
                 try:
-                    os.unlink(path)
+                    delete_file(path)
                 except OSError:
                     pass
