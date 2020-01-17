@@ -37,5 +37,5 @@ def pytest_configure(config):
                     print("\nRemoving stale bytecode file %s" % path)
                 try:
                     delete_file(path)
-                except OSError:
+                except FileNotFoundError:
                     pass
