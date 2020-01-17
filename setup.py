@@ -55,6 +55,7 @@ Programming Language :: Python :: Implementation :: PyPy
 Topic :: Software Development :: Libraries :: Python Modules
 Topic :: Software Development :: Testing
 """[:-1].split('\n'),
+    python_requires='>= 3.5',
     description=__doc__.strip(),
     long_description='\n\n'.join(open(project_path(name)).read() for name in (
         'README.rst',
