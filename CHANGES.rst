@@ -3,7 +3,7 @@ CHANGES
 =======
 
 
-5.0 (unreleased)
+5.0 (2020-01-17)
 ================
 
 Backwards incompatible changes
