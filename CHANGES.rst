@@ -14,7 +14,11 @@ Backwards incompatible changes
 Features
 --------
 
+- Add support for Python 3.8.
+
 - Migrate to Github.
+
+- Improve for new pytest versions.
 
 Bug fixes
 ---------

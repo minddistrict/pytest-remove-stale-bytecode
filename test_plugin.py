@@ -1,3 +1,4 @@
+from plugin import pytest_version
 from plugin import python_version
 from unittest import mock
 import pytest
@@ -55,6 +56,33 @@ def test_plugin_removes_PYTEST_bytecode_files(testdir, ext):
     assert foo.exists()
     assert foopytest.exists()
     assert not bar.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_removes_minus_PYTEST_bytecode_files(testdir, ext):
+    foo = testdir.makefile('py', foo='')
+    foopytest = testdir.makefile(ext, **{'foo-PYTEST': ''})
+    bar = testdir.makefile(ext, **{'bar-PYTEST': ''})
+    testdir.runpytest("-v")
+    assert foo.exists()
+    assert foopytest.exists()
+    assert not bar.exists()
+
+
+@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+def test_plugin_removes_pytest_version_bytecode_files(testdir, ext):
+    foo = testdir.makefile('.py', foo='')
+    pycache = testdir.mkdir('__pycache__')
+    fooco_name = 'foo.cpython-{}-pytest-{}.{}'.format(
+        python_version, pytest_version, ext)
+    fooco = pycache.ensure(fooco_name)
+    barco_name = 'bar.cpython-{}-pytest-{}.{}'.format(
+        python_version, pytest_version, ext)
+    barco = pycache.ensure(barco_name)
+    testdir.runpytest("-v")
+    assert foo.exists()
+    assert fooco.exists()
+    assert not barco.exists()
 
 
 @pytest.mark.parametrize("ext", ['pyc', 'pyo'])
