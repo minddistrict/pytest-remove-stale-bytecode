@@ -3,8 +3,8 @@ CHANGES
 =======
 
 
-5.1 (unreleased)
-================
+5.0.1 (2020-03-04)
+==================
 
 - Calling `pytest --help` no longer breaks when this plug-in is installed.
 
