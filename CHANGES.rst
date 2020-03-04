@@ -6,7 +6,7 @@ CHANGES
 5.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Calling `pytest --help` no longer breaks when this plug-in is installed.
 
 
 5.0 (2020-01-17)
