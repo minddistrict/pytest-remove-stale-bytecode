@@ -18,10 +18,15 @@ py.test plugin to remove stale bytecode
 Description
 ===========
 
-This plugin removes all stale bytecode files before running tests. This makes
+This plugin removes stale bytecode files of the packages under test before running tests. This makes
 sure that Python modules -- whose source was deleted -- are not accidentally visible
 to the test runner anymore due to a left-over bytecode file (``*.pyc``,
 ``*.pyo``).
+
+.. caution::
+
+   This plug-in only looks into the packages you are testing. If there is a stale bytecode file
+   in another package it does not remove it.
 
 Usage
 =====
