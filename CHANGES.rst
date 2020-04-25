@@ -2,11 +2,11 @@
 CHANGES
 =======
 
-
 4.0.1 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Calling `pytest --help` no longer breaks when this plug-in is installed.
+  (backport from 5.0.1)
 
 
 4.0 (2019-09-13)

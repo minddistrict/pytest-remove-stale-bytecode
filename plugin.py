@@ -21,7 +21,8 @@ def py_path(path):
 
 
 def pytest_configure(config):
-    for testpath in config.args:
+    # When calling pytest with --help `config` has no args:
+    for testpath in getattr(config, 'args', []):
         for root, subdirs, files in os.walk(testpath):
             for filename in files:
                 path = os.path.join(root, filename)
