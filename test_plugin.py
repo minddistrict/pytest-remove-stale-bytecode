@@ -11,9 +11,9 @@ def test_version():
     assert plugin.__version__
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_bytecode_files(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     fooco = testdir.makefile(ext, foo='')
     bar = testdir.makefile(ext, bar='')
 
@@ -29,9 +29,9 @@ def test_plugin_removes_bytecode_files(testdir, ext):
     assert foo.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_bytecode_files_verbosely(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     fooco = testdir.makefile(ext, foo='')
     bar = testdir.makefile(ext, bar='')
 
@@ -40,16 +40,16 @@ def test_plugin_removes_bytecode_files_verbosely(testdir, ext):
     result = testdir.runpytest("-v")
 
     result.stdout.fnmatch_lines([
-        "Removing stale bytecode file *bar.{}".format(ext),
+        "Removing stale bytecode file *bar{}".format(ext),
     ])
     assert not bar.exists()
     assert fooco.exists()
     assert foo.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_PYTEST_bytecode_files(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     foopytest = testdir.makefile(ext, foo_PYTEST='')
     bar = testdir.makefile(ext, bar_PYTEST='')
     testdir.runpytest("-v")
@@ -58,9 +58,9 @@ def test_plugin_removes_PYTEST_bytecode_files(testdir, ext):
     assert not bar.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_minus_PYTEST_bytecode_files(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     foopytest = testdir.makefile(ext, **{'foo-PYTEST': ''})
     bar = testdir.makefile(ext, **{'bar-PYTEST': ''})
     testdir.runpytest("-v")
@@ -69,14 +69,14 @@ def test_plugin_removes_minus_PYTEST_bytecode_files(testdir, ext):
     assert not bar.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_pytest_version_bytecode_files(testdir, ext):
     foo = testdir.makefile('.py', foo='')
     pycache = testdir.mkdir('__pycache__')
-    fooco_name = 'foo.cpython-{}-pytest-{}.{}'.format(
+    fooco_name = 'foo.cpython-{}-pytest-{}{}'.format(
         python_version, pytest_version, ext)
     fooco = pycache.ensure(fooco_name)
-    barco_name = 'bar.cpython-{}-pytest-{}.{}'.format(
+    barco_name = 'bar.cpython-{}-pytest-{}{}'.format(
         python_version, pytest_version, ext)
     barco = pycache.ensure(barco_name)
     testdir.runpytest("-v")
@@ -85,13 +85,13 @@ def test_plugin_removes_pytest_version_bytecode_files(testdir, ext):
     assert not barco.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_python3_bytecode_files(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     pycache = testdir.mkdir('__pycache__')
-    fooco_name = 'foo.cpython-{}.{}'.format(python_version, ext)
+    fooco_name = 'foo.cpython-{}{}'.format(python_version, ext)
     fooco = pycache.ensure(fooco_name)
-    barco_name = 'bar.cpython-{}.{}'.format(python_version, ext)
+    barco_name = 'bar.cpython-{}{}'.format(python_version, ext)
     barco = pycache.ensure(barco_name)
     testdir.runpytest("-v")
     assert foo.exists()
@@ -99,13 +99,13 @@ def test_plugin_removes_python3_bytecode_files(testdir, ext):
     assert not barco.exists()
 
 
-@pytest.mark.parametrize("ext", ['pyc', 'pyo'])
+@pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
 def test_plugin_removes_python3_PYTEST_bytecode_files(testdir, ext):
-    foo = testdir.makefile('py', foo='')
+    foo = testdir.makefile('.py', foo='')
     pycache = testdir.mkdir('__pycache__')
-    fooco_name = 'foo.cpython-{}-PYTEST.{}'.format(python_version, ext)
+    fooco_name = 'foo.cpython-{}-PYTEST{}'.format(python_version, ext)
     fooco = pycache.ensure(fooco_name)
-    barco_name = 'bar.cpython-{}-PYTEST.{}'.format(python_version, ext)
+    barco_name = 'bar.cpython-{}-PYTEST{}'.format(python_version, ext)
     barco = pycache.ensure(barco_name)
     testdir.runpytest("-v")
     assert foo.exists()
@@ -114,7 +114,7 @@ def test_plugin_removes_python3_PYTEST_bytecode_files(testdir, ext):
 
 
 def test_plugin_does_not_break_if_file_is_removed_externally(testdir):
-    bar = testdir.makefile('pyc', bar='')
+    bar = testdir.makefile('.pyc', bar='')
     with mock.patch('plugin.delete_file', side_effect=FileNotFoundError):
         testdir.runpytest("-v")
     assert bar.exists()

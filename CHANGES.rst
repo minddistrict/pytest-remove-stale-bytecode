@@ -6,7 +6,7 @@ CHANGES
 5.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Update tests to ``pytest >= 6.2``.
 
 
 5.0.1 (2020-03-04)
