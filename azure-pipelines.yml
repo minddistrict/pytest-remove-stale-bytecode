@@ -10,16 +10,16 @@ jobs:
     matrix:
       py35:
         python.version: '3.5'
-        tox.env: 'py35-azure'
+        tox.env: 'py35'
       py36:
         python.version: '3.6'
-        tox.env: 'py36-azure'
+        tox.env: 'py36'
       py37:
         python.version: '3.7'
-        tox.env: 'py37-azure'
+        tox.env: 'py37'
       py38:
         python.version: '3.8'
-        tox.env: 'py38-azure'
+        tox.env: 'py38'
     maxParallel: 10
 
   steps:
