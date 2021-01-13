@@ -8,6 +8,8 @@ CHANGES
 
 - Update tests to ``pytest >= 6.2``.
 
+- Use Github actions as CI.
+
 
 5.0.1 (2020-03-04)
 ==================
