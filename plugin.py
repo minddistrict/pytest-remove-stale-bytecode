@@ -1,6 +1,6 @@
-import pkg_resources
 import os
 import os.path
+import pkg_resources
 import sys
 
 
