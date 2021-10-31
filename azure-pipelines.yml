@@ -14,10 +14,10 @@ jobs:
       py38:
         python.version: '3.8'
         tox.env: 'py38'
-      py38:
+      py39:
         python.version: '3.9'
         tox.env: 'py38'
-      py38:
+      py310:
         python.version: '3.10'
         tox.env: 'py38'
     maxParallel: 10
