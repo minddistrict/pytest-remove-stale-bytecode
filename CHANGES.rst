@@ -6,9 +6,23 @@ CHANGES
 5.1 (unreleased)
 ================
 
+Backwards incompatible changes
+------------------------------
+
+- Drop support for Python 3.5 and 3.6.
+
+Features
+--------
+
+- Add support for Python 3.9 and 3.10.
+
 - Update tests to ``pytest >= 6.2``.
 
+Other changes
+-------------
+
 - Use Github actions as CI.
+
 
 
 5.0.1 (2020-03-04)

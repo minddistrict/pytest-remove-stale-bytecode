@@ -15,7 +15,7 @@ def project_path(*names):
 
 setup(
     name='pytest-remove-stale-bytecode',
-    version='5.1.dev0',
+    version='6.0.dev0',
 
     install_requires=[
         'pytest',
@@ -41,21 +41,21 @@ setup(
 Development Status :: 4 - Beta
 Environment :: Console
 Intended Audience :: Developers
-License :: OSI Approved :: MIT License
+License :: OSI Approved :: MIT Licensef
 Natural Language :: English
 Operating System :: OS Independent
 Programming Language :: Python :: 3
 Programming Language :: Python :: 3 :: Only
-Programming Language :: Python :: 3.5
-Programming Language :: Python :: 3.6
 Programming Language :: Python :: 3.7
 Programming Language :: Python :: 3.8
+Programming Language :: Python :: 3.9
+Programming Language :: Python :: 3.10
 Programming Language :: Python :: Implementation :: CPython
 Programming Language :: Python :: Implementation :: PyPy
 Topic :: Software Development :: Libraries :: Python Modules
 Topic :: Software Development :: Testing
 """[:-1].split('\n'),
-    python_requires='>= 3.5',
+    python_requires='>= 3.7',
     description=__doc__.strip(),
     long_description='\n\n'.join(open(project_path(name)).read() for name in (
         'README.rst',

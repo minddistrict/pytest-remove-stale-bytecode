@@ -17,12 +17,12 @@ jobs:
       matrix:
         config:
         # [Python version, tox env]
-        - ["3.5",   "py35"]
-        - ["3.6",   "py36"]
         - ["3.7",   "py37"]
         - ["3.8",   "py38"]
+        - ["3.8",   "py39"]
+        - ["3.8",   "py310"]
         - ["pypy3", "pypy3"]
-        - ["3.8",   "coverage"]
+        - ["3.10",   "coverage"]
     runs-on: ubuntu-latest
     name: ${{ matrix.config[1] }}
     steps:
