@@ -11,9 +11,6 @@ py.test plugin to remove stale bytecode
 .. image:: https://github.com/gocept/pytest-remove-stale-bytecode/workflows/tests/badge.svg
     :target: https://github.com/gocept/pytest-remove-stale-bytecode/actions?query=workflow%3Atests
 
-.. image:: https://dev.azure.com/gocept/pytest-remove-stale-bytecode/_apis/build/status/gocept.pytest-remove-stale-bytecode?branchName=master
-    :target: https://dev.azure.com/gocept/pytest-remove-stale-bytecode
-
 
 Description
 ===========
