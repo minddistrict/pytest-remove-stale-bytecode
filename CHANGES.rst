@@ -14,7 +14,7 @@ Backwards incompatible changes
 Features
 --------
 
-- Add support for Python 3.9 and 3.10.
+- Add support for Python 3.9, 3.10, 3.11.
 
 - Update tests to ``pytest >= 6.2``.
 
