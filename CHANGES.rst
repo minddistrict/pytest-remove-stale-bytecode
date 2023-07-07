@@ -3,7 +3,7 @@ CHANGES
 =======
 
 
-5.1 (unreleased)
+6.0 (2023-07-07)
 ================
 
 Backwards incompatible changes
