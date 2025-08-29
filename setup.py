@@ -19,7 +19,6 @@ setup(
 
     install_requires=[
         'pytest',
-        'setuptools',
     ],
 
     extras_require={
