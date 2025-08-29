@@ -6,7 +6,9 @@ CHANGES
 6.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Fix installed module name
+  (`#7 <https://github.com/minddistrict/pytest-remove-stale-bytecode/issues/7>`_)
+
 
 
 6.0 (2023-07-07)
