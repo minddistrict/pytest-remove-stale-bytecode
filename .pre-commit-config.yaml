@@ -1,27 +1,25 @@
 ---
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
-      rev: v4.5.0
+      rev: v6.0.0
       hooks:
           - id: trailing-whitespace
           - id: end-of-file-fixer
-          - id: fix-encoding-pragma
-            args: [--remove]
           - id: check-yaml
           - id: debug-statements
-            language_version: python3
     - repo: https://github.com/PyCQA/flake8
-      rev: 6.1.0
+      rev: 7.3.0
       hooks:
           - id: flake8
             language_version: python3
             additional_dependencies: [flake8-typing-imports==1.14.0]
     - repo: https://github.com/hhatto/autopep8
-      rev: v2.0.4
+      rev: v2.3.2
       hooks:
           - id: autopep8
+            args: [--in-place]
     - repo: https://github.com/PyCQA/isort
-      rev: 5.12.0
+      rev: 7.0.0
       hooks:
       - id: isort
         args: [--filter-files]
