@@ -19,7 +19,6 @@ setup(
 
     install_requires=[
         'pytest',
-        'setuptools',
     ],
 
     extras_require={
@@ -27,7 +26,7 @@ setup(
 
     entry_points={
         'pytest11': [
-            'removestalebytecode = plugin',
+            'removestalebytecode = pytest_remove_stale_bytecode',
         ],
     },
 
@@ -64,5 +63,5 @@ Topic :: Software Development :: Testing
     )),
 
     zip_safe=False,
-    py_modules=['plugin'],
+    py_modules=['pytest_remove_stale_bytecode'],
 )

@@ -1,5 +1,5 @@
-from plugin import pytest_version
-from plugin import python_version
+from pytest_remove_stale_bytecode import pytest_version
+from pytest_remove_stale_bytecode import python_version
 from unittest import mock
 import pytest
 
@@ -8,8 +8,8 @@ pytest_plugins = "pytester",
 
 
 def test_version():
-    import plugin
-    assert plugin.__version__
+    import pytest_remove_stale_bytecode
+    assert pytest_remove_stale_bytecode.__version__
 
 
 @pytest.mark.parametrize("ext", ['.pyc', '.pyo'])
@@ -116,6 +116,7 @@ def test_plugin_removes_python3_PYTEST_bytecode_files(testdir, ext):
 
 def test_plugin_does_not_break_if_file_is_removed_externally(testdir):
     bar = testdir.makefile('.pyc', bar='')
-    with mock.patch('plugin.delete_file', side_effect=FileNotFoundError):
+    with mock.patch('pytest_remove_stale_bytecode.delete_file',
+                    side_effect=FileNotFoundError):
         testdir.runpytest("-v")
     assert bar.exists()

@@ -1,13 +1,12 @@
+import importlib.metadata
 import os
 import os.path
-import pkg_resources
 import sys
 
 
-__version__ = pkg_resources.get_distribution(
-    'pytest-remove-stale-bytecode').version
+__version__ = importlib.metadata.version('pytest-remove-stale-bytecode')
 python_version = '{0.major}{0.minor}'.format(sys.version_info)
-pytest_version = pkg_resources.get_distribution('pytest').version
+pytest_version = importlib.metadata.version('pytest')
 
 compiled_suffixes = '.pyc', '.pyo'
 

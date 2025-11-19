@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = plugin
+source = pytest_remove_stale_bytecode
 
 [report]
 precision = 2

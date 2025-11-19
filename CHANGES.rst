@@ -18,6 +18,14 @@ Features
 
 - Update tests to ``pytest >= 7.4``.
 
+Other changes
+-------------
+
+- Fix installed module name
+  (`#7 <https://github.com/minddistrict/pytest-remove-stale-bytecode/issues/7>`_)
+
+- Replace deprecated ``pkg_resources`` with ``importlib.metadata``.
+
 
 6.0 (2023-07-07)
 ================
