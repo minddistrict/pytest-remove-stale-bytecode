@@ -3,10 +3,20 @@ CHANGES
 =======
 
 
-6.1 (unreleased)
+7.0 (unreleased)
 ================
 
-- Nothing changed yet.
+Backwards incompatible changes
+------------------------------
+
+- Drop support for Python 3.7, 3.8, 3.9.
+
+Features
+--------
+
+- Add support for Python 3.12, 3.13, 3.14.
+
+- Update tests to ``pytest >= 7.4``.
 
 
 6.0 (2023-07-07)
