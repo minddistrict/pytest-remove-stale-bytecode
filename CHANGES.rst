@@ -3,13 +3,28 @@ CHANGES
 =======
 
 
-6.1 (unreleased)
+7.0 (unreleased)
 ================
+
+Backwards incompatible changes
+------------------------------
+
+- Drop support for Python 3.7, 3.8, 3.9.
+
+Features
+--------
+
+- Add support for Python 3.12, 3.13, 3.14.
+
+- Update tests to ``pytest >= 7.4``.
+
+Other changes
+-------------
 
 - Fix installed module name
   (`#7 <https://github.com/minddistrict/pytest-remove-stale-bytecode/issues/7>`_)
-- Replace deprecated ``pkg_resources`` with ``importlib.metdata``
 
+- Replace deprecated ``pkg_resources`` with ``importlib.metadata``.
 
 
 6.0 (2023-07-07)
