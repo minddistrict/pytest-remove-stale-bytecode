@@ -116,6 +116,7 @@ def test_plugin_removes_python3_PYTEST_bytecode_files(testdir, ext):
 
 def test_plugin_does_not_break_if_file_is_removed_externally(testdir):
     bar = testdir.makefile('.pyc', bar='')
-    with mock.patch('pytest_remove_stale_bytecode.delete_file', side_effect=FileNotFoundError):
+    with mock.patch('pytest_remove_stale_bytecode.delete_file',
+                    side_effect=FileNotFoundError):
         testdir.runpytest("-v")
     assert bar.exists()
