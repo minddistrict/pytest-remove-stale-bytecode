@@ -8,8 +8,8 @@ py.test plugin to remove stale bytecode
 .. image:: https://img.shields.io/pypi/pyversions/pytest-remove-stale-bytecode.svg
     :target: https://pypi.org/project/pytest-remove-stale-bytecode/
 
-.. image:: https://github.com/gocept/pytest-remove-stale-bytecode/workflows/tests/badge.svg
-    :target: https://github.com/gocept/pytest-remove-stale-bytecode/actions?query=workflow%3Atests
+.. image:: https://github.com/minddistrict/pytest-remove-stale-bytecode/actions/workflows/tests.yml/badge.svg
+    :target: https://github.com/minddistrict/pytest-remove-stale-bytecode/actions?query=workflow%3Atests
 
 
 Description
